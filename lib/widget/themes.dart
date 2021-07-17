@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class MyTheme {
   static ThemeData lightTheme(BuildContext context) => ThemeData(
         primarySwatch: Colors.lightBlue,
         fontFamily: GoogleFonts.lato().fontFamily,
+                    cardColor :Colors.white,
+                    canvasColor: darkBluishColor,
+                    accentColor: darkBluishColor,
+                    buttonColor: liteblueColor,
         appBarTheme: AppBarTheme(
             backgroundColor: Colors.white,
             elevation: 0.0,
@@ -12,11 +17,23 @@ class MyTheme {
             textTheme: Theme.of(context).textTheme),
       );
   static ThemeData darkTheme(BuildContext context) => ThemeData(
-        brightness: Brightness.dark,
+    brightness: Brightness.dark,
+        fontFamily: GoogleFonts.lato().fontFamily,
+        cardColor: Colors.black,
+        buttonColor: lightBluishColor,
+        accentColor: Colors.white,
+        canvasColor: darkCreamColor,
+        appBarTheme: AppBarTheme(
+            backgroundColor: Colors.black,
+            elevation: 0.0,
+            iconTheme: IconThemeData(color: Colors.white),
+            textTheme: Theme.of(context).textTheme),
       );
 
   //colors
   static Color creamColor = Color(0xfff5f5f5);
+  static Color darkCreamColor = Vx.gray900;
   static Color darkBluishColor = Color(0xff403b58);
+  static Color lightBluishColor = Vx.blue100;
   static Color liteblueColor = Color(0xff81d4fa);
 }
