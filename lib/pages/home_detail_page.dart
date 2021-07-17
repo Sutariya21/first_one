@@ -11,22 +11,26 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: Container(
         color: Colors.white,
+        
         child: ButtonBar(
                 alignment: MainAxisAlignment.spaceBetween,
                 buttonPadding: EdgeInsets.zero,
                 children: [
                   "\$${catalog.price}".text.bold.xl4.blue800.make(),
                   ElevatedButton(onPressed: (){},
-                  style: ButtonStyle(backgroundColor: MaterialStateProperty.all(MyTheme.darkBluishColor),
+                  style: ButtonStyle(backgroundColor: MaterialStateProperty.all(MyTheme.liteblueColor)
+                  ,
                   shape: MaterialStateProperty.all(StadiumBorder(),
                   )), 
-                  child: "Buy".text.make(),
+                  child: "Add to Cart".text.make(),
                   
-                  ).wh(100, 50)
+                  ).wh(130, 50)
                 ],
               ).p32(),
       ),
@@ -48,15 +52,15 @@ class HomeDetailPage extends StatelessWidget {
             child: Column(
               children: [
                 catalog.name.text.xl4.color(MyTheme.darkBluishColor).bold.make(),
-            catalog.desc.text.textStyle(context.captionStyle).make(),
+            catalog.desc.text.textStyle(context.captionStyle).xl.make(),
             10.heightBox,
             
               ],
-            ),
+            ).py64(),
           ),
         ))
           ],
-        ).py64(),
+        ) ,
       ),
     );
   }
